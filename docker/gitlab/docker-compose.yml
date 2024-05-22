@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab-server
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://localhost'
+        gitlab_rails['initial_root_password'] = 'airc@202$'
+        puma['worker_processes'] = 0 # disable cluster mode to avoid more memory usage
+        nginx['redirect_http_to_https'] = true
+        nginx['ssl_certificate'] = "/etc/gitlab/ssl/gitlab.crt"
+        nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/gitlab.key"
+    ports:
+      - "8443:443"
+      - "8080:80"
+      - "8022:22"
+    restart: always
+    volumes:
+      - ./gitlab/config:/etc/gitlab:z
+      - ./gitlab/logs:/var/log/gitlab:z
+      - ./gitlab/data:/var/opt/gitlab:z
+      - /etc/gitlab/ssl/gitlab.crt:/etc/gitlab/ssl/gitlab.crt:ro
+      - /etc/gitlab/ssl/gitlab.key:/etc/gitlab/ssl/gitlab.key:ro
+      - /etc/localtime:/etc/localtime
+    sysctls:
+      net.core.somaxconn: 1024
+    ulimits:
+      sigpending: 62793
+      nproc: 131072
+      nofile:
+        soft: 60000
+        hard: 60000
+      core: 0
