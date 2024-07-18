@@ -4,23 +4,34 @@
 
 - [Hướng dẫn cài đặt GitLab local trên Ubuntu Server 20.04](#hướng-dẫn-cài-đặt-gitlab-local-trên-ubuntu-server-2004)
   - [Mục lục](#mục-lục)
-  - [1. Đăng nhập tài khoản root](#1-đăng-nhập-tài-khoản-root)
-  - [2. Cài đặt các gói phụ thuộc](#2-cài-đặt-các-gói-phụ-thuộc)
-  - [3. Cài đặt GitLab](#3-cài-đặt-gitlab)
-  - [4. Cấu hình firewall](#4-cấu-hình-firewall)
-  - [5. Khởi động GitLab](#5-khởi-động-gitlab)
-  - [6. Tùy chỉnh file cấu hình GitLab (Tùy chọn)](#6-tùy-chỉnh-file-cấu-hình-gitlab-tùy-chọn)
-  - [7. Khắc phục sự cố](#7-khắc-phục-sự-cố)
-    - [Sự cố khi run `sudo apt-get update`](#sự-cố-khi-run-sudo-apt-get-update)
-    - [7.2. Sự cố khi chạy ứng dụng](#72-sự-cố-khi-chạy-ứng-dụng)
+  - [Configuration](#configuration)
+  - [Installation steps](#installation-steps)
+    - [Đăng nhập tài khoản root](#đăng-nhập-tài-khoản-root)
+    - [Step 1. Cài đặt các gói phụ thuộc](#step-1-cài-đặt-các-gói-phụ-thuộc)
+    - [Step 2. Cài đặt GitLab](#step-2-cài-đặt-gitlab)
+    - [Step 3. Cấu hình firewall](#step-3-cấu-hình-firewall)
+    - [Step 4. Khởi động GitLab](#step-4-khởi-động-gitlab)
+    - [Step 5. Tùy chỉnh file cấu hình GitLab (Tùy chọn)](#step-5-tùy-chỉnh-file-cấu-hình-gitlab-tùy-chọn)
+  - [Fix bug install](#fix-bug-install)
+    - [1. Sự cố khi run `sudo apt-get update`](#1-sự-cố-khi-run-sudo-apt-get-update)
+    - [2. Sự cố khi chạy ứng dụng](#2-sự-cố-khi-chạy-ứng-dụng)
 
-## 1. Đăng nhập tài khoản root
+## Configuration
+
+- Operating system: Ubuntu 20.04
+- CPU: Tối thiểu 4 cores (Khuyến nghị 8 cores)
+- RAM: Tối thiểu 4 GB (Khuyến nghị 8 GB - Tăng thêm theo nhu cầu)
+- Disk: 100 GB
+
+## Installation steps
+
+### Đăng nhập tài khoản root
 
 ```sh
 su
 ```
 
-## 2. Cài đặt các gói phụ thuộc
+### Step 1. Cài đặt các gói phụ thuộc
 
 Cập nhật `apt` từ repository mặc định của `Ubuntu`
 
@@ -34,7 +45,7 @@ Cài đặt các gói phụ thuộc:
 sudo apt-get install -y curl ca-certificates openssh-server postfix tzdata perl runit libarchive-dev
 ```
 
-## 3. Cài đặt GitLab
+### Step 2. Cài đặt GitLab
 
 Chuyển đến thư mục `/tmp` và tải xuống `script` cài đặt `GitLab`:
 
@@ -94,7 +105,7 @@ Ghi lại mật khẩu hiển thị.
 
 **Mật khẩu build mặc định ban đầu thường là**: fZBCrhyHGrd75m9U0WOXii7Xid0tlMQv7m4zFg4jDhk=
 
-## 4. Cấu hình firewall
+### Step 3. Cấu hình firewall
 
 Kiểm tra trạng thái firewall:
 
@@ -134,11 +145,11 @@ OpenSSH                    ALLOW       Anywhere
 OpenSSH (v6)               ALLOW       Anywhere (v6)
 ```
 
-## 5. Khởi động GitLab
+### Step 4. Khởi động GitLab
 
 Mở trình duyệt và truy cập: `http://your-domain_or_IP`
 
-## 6. Tùy chỉnh file cấu hình GitLab (Tùy chọn)
+### Step 5. Tùy chỉnh file cấu hình GitLab (Tùy chọn)
 
 Nếu cần tùy chỉnh, chỉnh sửa file `gitlab.rb` và chạy lệnh cấu hình lại:
 
@@ -158,9 +169,9 @@ Lưu file và chạy lệnh cấu hình lại:
 sudo gitlab-ctl reconfigure
 ```
 
-## 7. Khắc phục sự cố
+## Fix bug install
 
-### Sự cố khi run `sudo apt-get update`
+### 1. Sự cố khi run `sudo apt-get update`
 
 Nếu gặp lỗi như sau:
 
@@ -182,7 +193,7 @@ Sau đó cập nhật lại:
 sudo apt-get update
 ```
 
-### 7.2. Sự cố khi chạy ứng dụng
+### 2. Sự cố khi chạy ứng dụng
 
 Nếu gặp lỗi "This site can’t be reached" và kiểm tra trạng thái GitLab như sau:
 
