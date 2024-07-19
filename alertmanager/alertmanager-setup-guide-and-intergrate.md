@@ -23,7 +23,7 @@
   - [Bước 15 : Kiểm tra cấu hình prometheus và reload ](#bước-15--kiểm-tra-cấu-hình-prometheus-và-reload)
   - [Bước 16 : Kích hoạt cảnh váo bằng cách gửi metrics mới và prometheus pushgateway](#bước-16--kích-hoạt-cảnh-váo-bằng-cách-gửi-metrics-mới-và-prometheus-pushgateway)
   - [Bước 17 : Kiểm tra slack](#bước-17--kiểm-tra-slack)
-  - [Alert rules reference](#alert-rules-reference)
+- [Alert rules reference](#alert-rules-reference)
 ## Cấu hình máy chủ
 ================
 
@@ -323,5 +323,5 @@ echo "jenkins_job_duration_seconds 31.87" | curl --data-binary @- http://localho
 ## Bước 17 : Kiểm tra slack
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXf62G6xIyWcnExtaO4nVynIS_NKXbXPr0Gp68aZkAINIFEpEoQaaaqpYSLyyT3MQm55vbX_jJm013qKN3pv-qAm2yKDgExXpX04vGpRya72XQVx24ZHQVgnEHahLGXdpRpFHv0OWbcgI1jlB0xgMyfcW_iv?key=IyyMZ2m2wlVblNcI5EDDXg)
 
-## Alert rules reference
+# Alert rules reference
 xem thêm rules [tại đây](https://samber.github.io/awesome-prometheus-alerts/rules.html)
