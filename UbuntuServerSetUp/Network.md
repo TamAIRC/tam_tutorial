@@ -1,6 +1,24 @@
-# Hướng dẫn cài đặt KVM trên Ubuntu Server 20.04
+# Hướng dẫn cấu hình mạng Bridge và tạo máy ảo Ubuntu Server 20.04 trong KVM
 
 Hướng dẫn cấu hình mạng Bridge và tạo máy ảo Ubuntu Server 20.04 trong KVM. Hãy làm theo các bước dưới đây để thiết lập và quản lý máy ảo một cách dễ dàng.
+
+## Mục lục
+
+- [Hướng dẫn cấu hình mạng Bridge và tạo máy ảo Ubuntu Server 20.04 trong KVM](#hướng-dẫn-cấu-hình-mạng-bridge-và-tạo-máy-ảo-ubuntu-server-2004-trong-kvm)
+  - [Mục lục](#mục-lục)
+  - [Configuration](#configuration)
+  - [Installation steps](#installation-steps)
+  - [Bước 1: Lấy tên card mạng vật lý](#bước-1-lấy-tên-card-mạng-vật-lý)
+  - [Bước 2: Cấu hình mạng Bridge](#bước-2-cấu-hình-mạng-bridge)
+  - [Bước 3: Lưu và áp dụng cấu hình](#bước-3-lưu-và-áp-dụng-cấu-hình)
+  - [Bước 4: Tải xuống tệp ISO Ubuntu Server](#bước-4-tải-xuống-tệp-iso-ubuntu-server)
+  - [Bước 5: Chạy KVM Virtual Machines Manager](#bước-5-chạy-kvm-virtual-machines-manager)
+  - [Bước 6: Tạo máy ảo Ubuntu Server 20.04 trong KVM](#bước-6-tạo-máy-ảo-ubuntu-server-2004-trong-kvm)
+  - [Bước 7: Kiểm tra kết nối internet](#bước-7-kiểm-tra-kết-nối-internet)
+
+## Configuration
+
+## Installation steps
 
 ## Bước 1: Lấy tên card mạng vật lý
 
@@ -68,7 +86,7 @@ network:
   - Cấu hình thêm các VLAN (`br0.20` và `br0.88`) và các bridges tương ứng (`bridge20` và `bridge88`).
   - Điều này giúp máy ảo kết nối được với mạng LAN và VLAN tương ứng.
 
-## Bước 3: Lưu và áp dụng cấu hình:
+## Bước 3: Lưu và áp dụng cấu hình
 
 - Lưu file và thoát khỏi nano. Kích hoạt cấu hình:
 
