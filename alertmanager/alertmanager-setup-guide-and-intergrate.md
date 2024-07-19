@@ -319,7 +319,7 @@ curl -X POST -u user_account:password http://localhost:9090/-/reload
 
 ## Bước 16 : Kích hoạt cảnh váo bằng cách gửi metrics mới và prometheus pushgateway
 ```sh
-echo "jenkins_job_duration_seconds 31.87" | curl --data-binary @- [http://localhost:9091/metrics/job/backup](http://localhost:9091/metrics/job/backup)
+echo "jenkins_job_duration_seconds 31.87" | curl --data-binary @- http://localhost:9091/metrics/job/backup
 ```
 ## Bước 17 : Kiểm tra slack
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXf62G6xIyWcnExtaO4nVynIS_NKXbXPr0Gp68aZkAINIFEpEoQaaaqpYSLyyT3MQm55vbX_jJm013qKN3pv-qAm2yKDgExXpX04vGpRya72XQVx24ZHQVgnEHahLGXdpRpFHv0OWbcgI1jlB0xgMyfcW_iv?key=IyyMZ2m2wlVblNcI5EDDXg)
