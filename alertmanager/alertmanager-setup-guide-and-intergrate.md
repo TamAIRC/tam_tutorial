@@ -11,7 +11,7 @@
   - [Bước 3 : Giải nén và di chuyển các file prometheus từ kho lưu trữ](#bước-3--giải-nén-và-di-chuyển-các-file-prometheus-từ-kho-lưu-trữ)
   - [Bước 4 : Dọn dẹp và thu hồi tài nguyên](#bước-4--dọn-dẹp-và-thu-hồi-tài-nguyên)
   - [Bước 5 : Xác minh rằng bạn có thể thực thi tệp nhị phân alertmanager bằng cách chạy lệnh sau](#bước-5--xác-minh-rằng-bạn-có-thể-thực-thi-tệp-nhị-phân-alertmanager-bằng-cách-chạy-lệnh-sau)
-  - [Bước 6 : Điều chỉnh file alertmanager.service\\](#bước-6--điều-chỉnh-file-alertmanagerservice)
+  - [Bước 6 : Điều chỉnh file alertmanager.service](#bước-6--điều-chỉnh-file-alertmanagerservice)
   - [Bước 7 : Khởi động Alertmanager](#bước-7--khởi-động-alertmanager)
   - [Bước 8 : Tạo alert dead mans snitch](#bước-8--tạo-alert-dead-mans-snitch)
   - [Bước 9 : Update file config của prometheus](#bước-9--update-file-config-của-prometheus)
@@ -23,7 +23,7 @@
   - [Bước 15 : Kiểm tra cấu hình prometheus và reload ](#bước-15--kiểm-tra-cấu-hình-prometheus-và-reload)
   - [Bước 16 : Kích hoạt cảnh váo bằng cách gửi metrics mới và prometheus pushgateway](#bước-16--kích-hoạt-cảnh-váo-bằng-cách-gửi-metrics-mới-và-prometheus-pushgateway)
   - [Bước 17 : Kiểm tra slack](#bước-17--kiểm-tra-slack)
-  - [Alert rules reference\\](#alert-rules-reference)
+  - [Alert rules reference](#alert-rules-reference)
 ## Cấu hình máy chủ
 ================
 
