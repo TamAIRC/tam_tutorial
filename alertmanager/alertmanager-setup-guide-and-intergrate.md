@@ -64,8 +64,8 @@ chọn phiên bản [tại đây](https://prometheus.io/download/)
 
 ## Bước 3 : Giải nén và di chuyển các file prometheus từ kho lưu trữ
 ```sh
-tar -xvf alertmanager-0.23.0.linux-amd64.tar.gz\
-sudo mkdir -p /data /etc/prometheus\
+tar -xvf alertmanager-0.23.0.linux-amd64.tar.gz/
+sudo mkdir -p /data /etc/prometheus/
 sudo mv alertmanager-0.23.0.linux-amd64/alertmanager /usr/local/bin/
 sudo mv alertmanager-0.23.0.linux-amd64/alertmanager.yml /etc/alertmanager/
 ```
@@ -78,11 +78,11 @@ rm -rf alertmanager*
 
 ## Bước 5 : Xác minh rằng bạn có thể thực thi tệp nhị phân alertmanager bằng cách chạy lệnh sau
 ```sh
-alertmanager--version\
+alertmanager--version
 ```
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXcja-DE2Ikt50hkaoXDp6_42LVHmyjblq7SZDlok1zpk5Rh9ttrC3x7PTi-pIk7pl1TC4cJkNlWiLfZtJbhDA-pl_S-ZKjl1xV16RimXMbtAnEIbLXOAqofp8jLtfCodUr_V1wBnu38j1trIfeOvlwrcup8?key=IyyMZ2m2wlVblNcI5EDDXg)
 
-## Bước 6 : Điều chỉnh file alertmanager.service\
+## Bước 6 : Điều chỉnh file alertmanager.service
 ```sh
 sudo vim /etc/systemd/system/alertmanager.service
 ```
@@ -189,7 +189,7 @@ rule_files:
 ```
 
 ## Bước 10 : Dùng promtool để check config trước khi restart
-promtool check config /etc/prometheus/prometheus.yml\
+promtool check config /etc/prometheus/prometheus.yml
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXdAbsV_lwh2yPKR1C7odBZN6fUaWQ0IdrDz1yZu_GFLsT8zRY5yepKa6rKvbtW7x6kLIHONcgmEdgrXQ2xh8EzjwYBTkAwt-v4qorQsZ0I5wGRDzj_y1PwIOzvmYP4N_czSLDVQ5o1NqJl7uFMq3hFMmBM5?key=IyyMZ2m2wlVblNcI5EDDXg)
 
 ## Bước 11 : Restart và check status dịch vụ
@@ -204,16 +204,15 @@ sudo systemctl status prometheus
 
 ## Bước 12 : Tích hợp với slack
 - Tạo 1 channel Slack\
-- Tạo Slack App , chọn new Slack App from scratch. Give it a name and select a workspace
-
+- Tạo Slack App , chọn new Slack App from scratch. Give it a name and select a workspace\
 - Enable incoming webhook sau đó thêm webhoo vào workspace\
 - Copy webhook url và thêm vào cấu hình Alertmanager\
 vào cấu hình alertmanager và cấu hình new route gửi cảnh báo tới Slack
-
-sudo vim /etc/alertmanager/alertmanager.yml
-
-alertmanager.yml scripts : 
 ```sh
+sudo vim /etc/alertmanager/alertmanager.yml
+```
+alertmanager.yml scripts : 
+```yml
 ---
 
 route:
@@ -324,5 +323,5 @@ echo "jenkins_job_duration_seconds 31.87" | curl --data-binary @- http://localho
 ## Bước 17 : Kiểm tra slack
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXf62G6xIyWcnExtaO4nVynIS_NKXbXPr0Gp68aZkAINIFEpEoQaaaqpYSLyyT3MQm55vbX_jJm013qKN3pv-qAm2yKDgExXpX04vGpRya72XQVx24ZHQVgnEHahLGXdpRpFHv0OWbcgI1jlB0xgMyfcW_iv?key=IyyMZ2m2wlVblNcI5EDDXg)
 
-## Alert rules reference\
+## Alert rules reference
 xem thêm rules [tại đây](https://samber.github.io/awesome-prometheus-alerts/rules.html)
